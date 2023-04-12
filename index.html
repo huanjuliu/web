@@ -99,11 +99,19 @@
 				<li><a href="#about">About</a></li>
 				<li><a href="#services">Services</a></li>
 				<li><a href="#contact">Contact</a></li>
+					<nav>
+			<ul>
+				<li><a href="#home">Home</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#services">Services</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<li>
+					<select id="language-select" onchange="changeLanguage()">
+						<option value="en">English</option>
+						<option value="zh">中文</option>
+					</select>
+				</li>
 			</ul>
-			<div>
-				<button onclick="showEn()">English</button>
-				<button onclick="showZh()">中文</button>
-			</div>
 		</nav>
 		<section id="home">
 			<h1>Welcome to LHJ Website</h1>
@@ -112,17 +120,28 @@
 		<section id="about">
 			<h2>About</h2>
 			<p id="en">I'm Huanju Liu from Zhejiang University.</p>
-			<p id="zh">这是刘焕举的个人网站</p>
-			<button onclick="toggleLanguage()">中文</button>
+			<p id="zh" style="display:none">这是刘焕举的个人网站</p>
 		</section>
+		<script>
+			function changeLanguage() {
+				var language = document.getElementById("language-select").value;
+				if (language === "en") {
+					document.getElementById("en").style.display = "block";
+					document.getElementById("zh").style.display = "none";
+				} else if (language === "zh") {
+					document.getElementById("zh").style.display = "block";
+					document.getElementById("en").style.display = "none";
+				}
+			}
+		</script>
 		
 		<section id="services">
 			<h2>Our Services</h2>
 			<ul>
 				<li><a href="https://space.bilibili.com/386729652?spm_id_from=333.337.0.0" target="_blank">B站主页</a></li>
-				<li><a href="https://www.ixigua.com/home/67836768907" target="_blank">西瓜视频</a></li>
-				<li><a href="https://github.com/huanjuliu/" target="_blank">Github</a></li>
 				<li><a href="https://www.jianshu.com/u/8e6071dd7b81" target="_blank">简书</a></li>
+				<li><a href="https://github.com/huanjuliu/" target="_blank">Github</a></li>
+				<li><a href="https://www.ixigua.com/home/67836768907" target="_blank">西瓜视频</a></li>
 			</ul>
 		</section>
 		
