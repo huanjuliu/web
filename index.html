@@ -102,101 +102,87 @@
 		  </ul>
 		  <div>
 		    <select id="language-select" onchange="changeLanguage()">
-		      <option value="en">English</option>
+		      <option value="en" selected>English</option>
 		      <option value="zh">中文</option>
 		    </select>
 		  </div>
 		</nav>
-		<section id="home">
-		  <h1 id="title-en">Welcome to My Website</h1>
-		  <h1 id="title-zh" style="display:none">欢迎来到我的网站</h1>
-		  <p id="services-text-en">What I can serve for you?</p>
-		  <p id="services-text-zh" style="display:none">该网站可以为你们提供什么? </p>
-		</section>
-		<section id="about">
-		  <h2 id="about-header-en">About Us</h2>
-		  <h2 id="about-header-zh" style="display:none">关于我们</h2>
-		  <p id="about-text-en">I'm Huanju Liu from Zhejiang University.</p>
-		  <p id="about-text-zh" style="display:none">这是刘焕举的个人网站</p>
-		</section>
+
+		<main>
+		  <section id="home">
+		    <h1 id="home-header-en">Welcome to our website!</h1>
+		    <h1 id="home-header-zh" style="display:none">欢迎来到我们的网站！</h1>
+		    <p id="home-text-en">We offer a variety of services to meet your needs. Explore our website to learn more.</p>
+		    <p id="home-text-zh" style="display:none">我们提供多种服务，以满足您的需求。浏览我们的网站以了解更多信息。</p>
+		  </section>
+
+		  <section id="about">
+		    <h2 id="about-header-en">About Us</h2>
+		    <h2 id="about-header-zh" style="display:none">关于我们</h2>
+		    <p id="about-text-en">Our company has been providing quality services for over 20 years. Learn more about our team and our mission on this page.</p>
+		    <p id="about-text-zh" style="display:none">我们公司已经提供优质服务超过20年。在这个页面上了解更多关于我们团队和我们的使命。</p>
+		  </section>
+
+		  <section id="services">
+		    <h2 id="services-header-en">Our Services</h2>
+		    <h2 id="services-header-zh" style="display:none">我们的服务</h2>
+		    <ul id="services-list-en">
+		      <li>Service 1</li>
+		      <li>Service 2</li>
+		      <li>Service 3</li>
+		    </ul>
+		    <ul id="services-list-zh" style="display:none">
+		      <li>服务1</li>
+		      <li>服务2</li>
+		      <li>服务3</li>
+		    </ul>
+		  </section>
+
+		  <section id="contact">
+		    <h2 id="contact-header-en">Contact Us</h2>
+		    <h2 id="contact-header-zh" style="display:none">联系我们</h2>
+		    <p id="contact-text-en">Fill out the form below to get in touch with us.</p>
+		    <p id="contact-text-zh" style="display:none">填写下面的表格与我们联系。</p>
+		    <form>
+		      <label for="name-input">Name:</label>
+		      <input type="text" id="name-input" name="name">
+		      <label for="email-input">Email:</label>
+		      <input type="email" id="email-input" name="email">
+		      <label for="message-input">Message:</label>
+		      <textarea id="message-input" name="message"></textarea>
+		      <button type="submit">Submit</button>
+		    </form>
+		  </section>
+		</main>
+
 		<script>
 		  function changeLanguage() {
-		    var language = document.getElementById("language-select").value;
-		    if (language === "en") {
-		      document.getElementById("title-en").style.display = "block";
-		      document.getElementById("title-zh").style.display = "none";
-		      document.getElementById("services-text-en").style.display = "block";
-		      document.getElementById("services-text-zh").style.display = "none";
-		      document.querySelectorAll("[id$='-en']").forEach(function(el) {
-		        el.style.display = "block";
-		      });
-		      document.querySelectorAll("[id$='-zh']").forEach(function(el) {
-		        el.style.display = "none";
-		      });
-		    } else if (language === "zh") {
-		      document.getElementById("title-en").style.display = "none";
-		      document.getElementById("title-zh").style.display = "block";
-		      document.getElementById("services-text-en").style.display = "none";
-		      document.getElementById("services-text-zh").style.display = "block";
-		      document.querySelectorAll("[id$='-zh']").forEach(function(el) {
-		        el.style.display = "block";
-		      });
-		      document.querySelectorAll("[id$='-en']").forEach(function(el) {
-		        el.style.display = "none";
-		      });
+		    var languageSelect = document.getElementById("language-select");
+		    var selectedLanguage = languageSelect.options[languageSelect.selectedIndex].value;
+
+		    if (selectedLanguage === "en") {
+		      document.getElementById("home-en").style.display = "inline";
+		      document.getElementById("home-zh").style.display = "none";
+		      document.getElementById("about-en").style.display = "inline";
+		      document.getElementById("about-zh").style.display = "none";
+		      document.getElementById("services-en").style.display = "inline";
+		      document.getElementById("services-zh").style.display = "none";
+		      document.getElementById("contact-en").style.display = "inline";
+		      document.getElementById("contact-zh").style.display = "none";
+		    } else if (selectedLanguage === "zh") {
+		      document.getElementById("home-en").style.display = "none";
+		      document.getElementById("home-zh").style.display = "inline";
+		      document.getElementById("about-en").style.display = "none";
+		      document.getElementById("about-zh").style.display = "inline";
+		      document.getElementById("services-en").style.display = "none";
+		      document.getElementById("services-zh").style.display = "inline";
+		      document.getElementById("contact-en").style.display = "none";
+		      document.getElementById("contact-zh").style.display = "inline";
 		    }
 		  }
+
+		  // Call the changeLanguage function when the language select changes
+		  document.getElementById("language-select").addEventListener("change", changeLanguage);
 		</script>
-		<section id="services">
-			<h2 id="services-header-en">Our Services</h2>
-			<h2 id="services-header-zh" style="display:none">服务范围</h2>
-			<ul>
-				<li><a href="https://space.bilibili.com/386729652?spm_id_from=333.337.0.0" target="_blank">B站主页</a></li>
-				<li><a href="https://www.jianshu.com/u/8e6071dd7b81" target="_blank">简书</a></li>
-				<li><a href="https://github.com/huanjuliu/" target="_blank">Github</a></li>
-				<li><a href="https://www.ixigua.com/home/67836768907" target="_blank">西瓜视频</a></li>
-			</ul>
-		</section>
-
-		<section id="contact">
-		  <h2 id="contact-header-en">Contact Us</h2>
-		  <h2 id="contact-header-zh" style="display:none">联系我们</h2>
-		  <?php
-		  if(isset($_POST['submit'])){
-		    $to = "huanjuliu@163.com";
-		    $from = $_POST['email'];
-		    $name = $_POST['name'];
-		    $subject = "New contact form submission";
-		    $subject2 = "Copy of your contact form submission";
-		    $message = $name . " wrote the following:" . "\n\n" . $_POST['message'];
-		    $message2 = "Here is a copy of your message " . $name . "\n\n" . $_POST['message'];
-
-		    $headers = "From:" . $from;
-		    $headers2 = "From:" . $to;
-		    mail($to,$subject,$message,$headers);
-		    mail($from,$subject2,$message2,$headers2); 
-		  ?>
-		    <p>Thank you for contacting us! We will get back to you shortly.</p>
-		  <?php
-		  } else {
-		  ?>
-		    <form method="get">
-		      <label for="name">Name:</label><br>
-		      <input type="text" id="name" name="name"><br>
-		      <label for="email">Email:</label><br>
-		      <input type="email" id="email" name="email"><br>
-		      <label for="message">Message:</label><br>
-		      <textarea id="message" name="message"></textarea><br>
-		      <input type="submit" name="submit" value="Submit">
-		    </form> 
-		  <?php
-		  }
-		  ?>
-		</section>
-		
-	</main>
-	<footer>
-		<p>&copy; 2023 健康科技探索有限公司. All rights reserved.</p>
-	</footer>
-</body>
+	</body>
 </html>
