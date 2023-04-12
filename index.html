@@ -35,24 +35,53 @@
 				text-decoration: underline;
 			}
 			#home {
-				background-image: url('https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg');
-				background-size: cover;
-				height: 100vh;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				flex-direction: column;
-				color: white;
-				text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+			  background-size: cover;
+			  height: 100vh;
+			  display: flex;
+			  justify-content: center;
+			  align-items: center;
+			  flex-direction: column;
+			  color: white;
+			  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 			}
+
 			#home h1 {
-				font-size: 5em;
-				margin-bottom: 0;
+			  font-size: 5em;
+			  margin-bottom: 0;
 			}
+
 			#home p {
-				font-size: 2em;
-				margin-top: 0;
+			  font-size: 2em;
+			  margin-top: 0;
 			}
+
+			/* Set the background images and transition duration */
+			#home {
+			  background-image: url('https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg');
+			  transition: background-image 3s ease-in-out;
+			}
+
+			#home.bg-1 {
+			  background-image: url('https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_960_720.jpg');
+			}
+
+			#home.bg-2 {
+			  background-image: url('https://www.chinadaily.com.cn/travel/img/attachement/jpg/site1/20160510/b083fe96fb62189be46c0d.jpg');
+			}
+
+			#home.bg-3 {
+			  background-image: url('https://cdn.pixabay.com/photo/2017/01/20/00/30/maldives-1993704_960_720.jpg');
+			}
+			<script>
+			  let i = 1;
+			  setInterval(function() {
+			    const home = document.getElementById("home");
+			    home.classList.remove(`bg-${i}`);
+			    i = (i + 1) % 3 + 1;
+			    home.classList.add(`bg-${i}`);
+			  }, 3000);
+			</script>
+
 			section {
 				padding: 50px;
 				display: flex;
