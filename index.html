@@ -95,10 +95,10 @@
 	<body>
 		<nav>
 		  <ul id="nav-links">
-		    <li><a href="#home" id="nav-home-en">Home</a><a href="#home" id="nav-home-zh" style="display:none">主页</a></li>
-		    <li><a href="#about" id="nav-about-en">About</a><a href="#about" id="nav-about-zh" style="display:none">关于</a></li>
-		    <li><a href="#services" id="nav-services-en">Services</a><a href="#services" id="nav-services-zh" style="display:none">服务</a></li>
-		    <li><a href="#contact" id="nav-contact-en">Contact</a><a href="#contact" id="nav-contact-zh" style="display:none">联系</a></li>
+		    <li><a href="#home" id="home-en">Home</a><a href="#home" id="home-zh" style="display:none">主页</a></li>
+		    <li><a href="#about" id="about-en">About</a><a href="#about" id="about-zh" style="display:none">关于</a></li>
+		    <li><a href="#services" id="services-en">Services</a><a href="#services" id="services-zh" style="display:none">服务</a></li>
+		    <li><a href="#contact" id="contact-en">Contact</a><a href="#contact" id="contact-zh" style="display:none">联系</a></li>
 		  </ul>
 		  <div>
 		    <select id="language-select" onchange="changeLanguage()">
@@ -108,41 +108,44 @@
 		  </div>
 		</nav>
 		<section id="home">
-			<h1 id="en">Welcome to My Website</h1>
-			<h1 id="zh" style="display:none">欢迎来到我的网站</h1>
-			<p id="en">What I can serve for you?</p>
-			<p id="zh" style="display:none">该网站可以为你们提供什么? </p>
+		  <h1 id="title-en">Welcome to My Website</h1>
+		  <h1 id="title-zh" style="display:none">欢迎来到我的网站</h1>
+		  <p id="services-text-en">What I can serve for you?</p>
+		  <p id="services-text-zh" style="display:none">该网站可以为你们提供什么? </p>
 		</section>
 		<section id="about">
-			<h2>About</h2>
-			<p id="en">I'm Huanju Liu from Zhejiang University.</p>
-			<p id="zh" style="display:none">这是刘焕举的个人网站</p>
+		  <h2>About</h2>
+		  <p id="about-text-en">I'm Huanju Liu from Zhejiang University.</p>
+		  <p id="about-text-zh" style="display:none">这是刘焕举的个人网站</p>
 		</section>
 		<script>
 		  function changeLanguage() {
 		    var language = document.getElementById("language-select").value;
 		    if (language === "en") {
-		      document.getElementById("en").style.display = "block";
-		      document.getElementById("zh").style.display = "none";
-		      document.getElementById("nav-links").querySelectorAll("[id$='-en']").forEach(function(el) {
+		      document.getElementById("title-en").style.display = "block";
+		      document.getElementById("title-zh").style.display = "none";
+		      document.getElementById("services-text-en").style.display = "block";
+		      document.getElementById("services-text-zh").style.display = "none";
+		      document.querySelectorAll("[id$='-en']").forEach(function(el) {
 		        el.style.display = "block";
 		      });
-		      document.getElementById("nav-links").querySelectorAll("[id$='-zh']").forEach(function(el) {
+		      document.querySelectorAll("[id$='-zh']").forEach(function(el) {
 		        el.style.display = "none";
 		      });
 		    } else if (language === "zh") {
-		      document.getElementById("zh").style.display = "block";
-		      document.getElementById("en").style.display = "none";
-		      document.getElementById("nav-links").querySelectorAll("[id$='-zh']").forEach(function(el) {
+		      document.getElementById("title-en").style.display = "none";
+		      document.getElementById("title-zh").style.display = "block";
+		      document.getElementById("services-text-en").style.display = "none";
+		      document.getElementById("services-text-zh").style.display = "block";
+		      document.querySelectorAll("[id$='-zh']").forEach(function(el) {
 		        el.style.display = "block";
 		      });
-		      document.getElementById("nav-links").querySelectorAll("[id$='-en']").forEach(function(el) {
+		      document.querySelectorAll("[id$='-en']").forEach(function(el) {
 		        el.style.display = "none";
 		      });
 		    }
 		  }
 		</script>
-		
 		<section id="services">
 			<h2>Our Services</h2>
 			<ul>
