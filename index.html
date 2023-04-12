@@ -94,18 +94,18 @@
 	</head>
 	<body>
 		<nav>
-			<ul>
-				<li><a href="#home">Home</a></li>
-				<li><a href="#about">About</a></li>
-				<li><a href="#services">Services</a></li>
-				<li><a href="#contact">Contact</a></li>
-				<li>
-					<select id="language-select" onchange="changeLanguage()">
-						<option value="en">English</option>
-						<option value="zh">中文</option>
-					</select>
-				</li>
-			</ul>
+		  <div>
+		    <select id="language-select" onchange="changeLanguage()">
+		      <option value="en">English</option>
+		      <option value="zh">中文</option>
+		    </select>
+		  </div>
+		  <ul id="nav-links">
+		    <li><a href="#home" id="nav-home-en">Home</a><a href="#home" id="nav-home-zh" style="display:none">主页</a></li>
+		    <li><a href="#about" id="nav-about-en">About</a><a href="#about" id="nav-about-zh" style="display:none">关于</a></li>
+		    <li><a href="#services" id="nav-services-en">Services</a><a href="#services" id="nav-services-zh" style="display:none">服务</a></li>
+		    <li><a href="#contact" id="nav-contact-en">Contact</a><a href="#contact" id="nav-contact-zh" style="display:none">联系</a></li>
+		  </ul>
 		</nav>
 		<section id="home">
 			<h1>Welcome to LHJ Website</h1>
@@ -117,16 +117,28 @@
 			<p id="zh" style="display:none">这是刘焕举的个人网站</p>
 		</section>
 		<script>
-			function changeLanguage() {
-				var language = document.getElementById("language-select").value;
-				if (language === "en") {
-					document.getElementById("en").style.display = "block";
-					document.getElementById("zh").style.display = "none";
-				} else if (language === "zh") {
-					document.getElementById("zh").style.display = "block";
-					document.getElementById("en").style.display = "none";
-				}
-			}
+		  function changeLanguage() {
+		    var language = document.getElementById("language-select").value;
+		    if (language === "en") {
+		      document.getElementById("en").style.display = "block";
+		      document.getElementById("zh").style.display = "none";
+		      document.getElementById("nav-links").querySelectorAll("[id$='-en']").forEach(function(el) {
+		        el.style.display = "block";
+		      });
+		      document.getElementById("nav-links").querySelectorAll("[id$='-zh']").forEach(function(el) {
+		        el.style.display = "none";
+		      });
+		    } else if (language === "zh") {
+		      document.getElementById("zh").style.display = "block";
+		      document.getElementById("en").style.display = "none";
+		      document.getElementById("nav-links").querySelectorAll("[id$='-zh']").forEach(function(el) {
+		        el.style.display = "block";
+		      });
+		      document.getElementById("nav-links").querySelectorAll("[id$='-en']").forEach(function(el) {
+		        el.style.display = "none";
+		      });
+		    }
+		  }
 		</script>
 		
 		<section id="services">
