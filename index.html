@@ -35,6 +35,7 @@
 				text-decoration: underline;
 			}
 			#home {
+			  background-image: url('https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg');
 			  background-size: cover;
 			  height: 100vh;
 			  display: flex;
@@ -43,22 +44,15 @@
 			  flex-direction: column;
 			  color: white;
 			  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+			  animation-name: rotateBg;
+			  animation-duration: 10s;
+			  animation-timing-function: linear;
+			  animation-iteration-count: infinite;
 			}
 
-			#home h1 {
-			  font-size: 5em;
-			  margin-bottom: 0;
-			}
-
-			#home p {
-			  font-size: 2em;
-			  margin-top: 0;
-			}
-
-			/* Set the background images and transition duration */
-			#home {
-			  background-image: url('https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg');
-			  transition: background-image 3s ease-in-out;
+			@keyframes rotateBg {
+			  from {transform: rotate(0deg);}
+			  to {transform: rotate(360deg);}
 			}
 
 			#home.bg-1 {
@@ -72,6 +66,7 @@
 			#home.bg-3 {
 			  background-image: url('https://cdn.pixabay.com/photo/2017/01/20/00/30/maldives-1993704_960_720.jpg');
 			}
+
 			<script>
 			  let i = 1;
 			  setInterval(function() {
