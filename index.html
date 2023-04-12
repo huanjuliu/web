@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+	<meta charset="UTF-8">
 	<title>Huanju Liu</title>
 	<style>
 		body {
@@ -57,6 +58,18 @@
 			text-align: center;
 			font-size: 14px;
 		}
+		#en {
+			display: block;
+		}
+		#zh {
+			display: none;
+		}
+		#en li {
+			list-style: disc;
+		}
+		#zh li {
+			list-style: cjk-ideographic;
+		}
 	</style>
 </head>
 <body>
@@ -65,37 +78,52 @@
 	</header>
 	<nav>
 		<ul>
-			<li><a href="#home">Home</a></li>
-			<li><a href="#about">About</a></li>
-			<li><a href="#services">Services</a></li>
-			<li><a href="#contact">Contact</a></li>
+			<li><a href="#" onclick="showEnglish()">English</a></li>
+			<li><a href="#" onclick="showChinese()">中文</a></li>
 		</ul>
 	</nav>
 	<section id="home">
-		<h2>Welcome to LHJ's website!</h2>
-		<p>This is the LHJ's website created with HTML and CSS.</p>
+		<h2>Welcome to My Website!</h2>
+		<p id="en">This is the website of Huanju Liu, created with HTML and CSS.</p>
+		<p id="zh">这是刘焕举的网站，由HTML和CSS创建。</p>
 		<img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg" alt="My Image">
 	</section>
-	<section id="about" style="display:none;">
-		<h2>About Me</h2>
-		<p>I am a software engineer with expertise in web development and machine learning. In my free time, I enjoy hiking and reading.</p>
-	</section>
-	<section id="services" style="display:none;">
-		<h2>My Services</h2>
-		<ul>
-			<li>Web development</li>
-			<li>Machine learning consulting</li>
-			<li>Data analysis</li>
+	<section id="services">
+		<h2>Services</h2>
+		<ul id="en">
+			<li>Web Design</li>
+			<li>Web Development</li>
+			<li>Search Engine Optimization</li>
 		</ul>
-	</section>
-	<section id="contact" style="display:none;">
-		<h2>Contact Me</h2>
-		<p>You can reach me at:</p>
-		<ul>
-			<li>Email: huanju.liu@example.com</li>
-			<li>Phone: 555-555-5555</li>
-			<li>Address: 123 Main St, Anytown USA</li>
+		<ul id="zh" style="display:none;">
+			<li>网页设计</li>
+			<li>网页开发</li>
+			<li>搜索引擎优化</li>
 		</ul>
 	</section>
 	<footer>
-		<p>&copy
+		<p>&copy; 2023 Huanju Liu's Website. All rights reserved.</p>
+	</footer>
+	<script>
+		// Function to toggle between English and Chinese
+		function toggleLanguage() {
+			var en = document.getElementById("en");
+			var zh = document.getElementById("zh");
+			var enLinks = document.getElementById("enLinks");
+			var zhLinks = document.getElementById("zhLinks");
+
+			if (en.style.display === "none") {
+				en.style.display = "block";
+				zh.style.display = "none";
+				enLinks.style.display = "block";
+				zhLinks.style.display = "none";
+			} else {
+				en.style.display = "none";
+				zh.style.display = "block";
+				enLinks.style.display = "none";
+				zhLinks.style.display = "block";
+			}
+		}
+	</script>
+</body>
+</html>
