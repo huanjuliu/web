@@ -1,62 +1,101 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>LHJ's Website</title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<style>
-			/* add your CSS styles here */
-		</style>
-		<script>
-			function switchLanguage() {
-				var enElements = document.querySelectorAll("#en");
-				var zhElements = document.querySelectorAll("#zh");
-				for (var i = 0; i < enElements.length; i++) {
-					enElements[i].style.display = "none";
-				}
-				for (var i = 0; i < zhElements.length; i++) {
-					zhElements[i].style.display = "none";
-				}
-				if (document.documentElement.lang == "zh") {
-					document.documentElement.lang = "en";
-					for (var i = 0; i < enElements.length; i++) {
-						enElements[i].style.display = "block";
-					}
-				} else {
-					document.documentElement.lang = "zh";
-					for (var i = 0; i < zhElements.length; i++) {
-						zhElements[i].style.display = "block";
-					}
-				}
-			}
-		</script>
-	</head>
-	<body>
-		<header>
-			<h1>My Beautiful Website</h1>
-		</header>
-		<nav>
-			<ul>
-				<li><a href="#home">Home</a></li>
-				<li><a href="#about">About</a></li>
-				<li><a href="#services">Services</a></li>
-				<li><a href="#contact">Contact</a></li>
-				<li><a href="#" onclick="switchLanguage()">中文/English</a></li>
-			</ul>
-		</nav>
-		<section id="home">
-			<h2>Welcome to My Website!</h2>
-			<p id="en">This is the website of Huanju Liu, created with HTML and CSS.</p>
-			<p id="zh" style="display:none;">这是刘焕举的网站，由HTML和CSS创建。</p>
-			<img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg" alt="My Image">
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Huanju Liu</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+			color: #333;
+			margin: 0;
+			padding: 0;
+		}
+		header {
+			background-color: #fff;
+			padding: 20px;
+			box-shadow: 0 4px 4px rgba(0,0,0,0.1);
+		}
+		h1 {
+			font-size: 36px;
+			margin: 0;
+		}
+		nav {
+			background-color: #333;
+			color: #fff;
+			padding: 10px;
+			text-align: center;
+		}
+		nav ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: inline-block;
+		}
+		nav li {
+			display: inline-block;
+			margin: 0 10px;
+		}
+		nav a {
+			color: #fff;
+			text-decoration: none;
+			font-size: 18px;
+			padding: 10px;
+		}
+		nav a:hover {
+			background-color: #fff;
+			color: #333;
+		}
+		section {
+			padding: 20px;
+			max-width: 800px;
+			margin: 0 auto;
+		}
+		footer {
+			background-color: #333;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+			font-size: 14px;
+		}
+		#en {
+			display: block;
+		}
+		#zh {
+			display: none;
+		}
+		#en li {
+			list-style: disc;
+		}
+		#zh li {
+			list-style: cjk-ideographic;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Huanju Liu</h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="#" onclick="toggleLanguage()">English</a></li>
+			<li><a href="#" onclick="toggleLanguage()">中文</a></li>
+		</ul>
+	</nav>
+	<section id="home">
+		<h2>Welcome to My Website!</h2>
+		<p id="en">This is the website of Huanju Liu, created with HTML and CSS.</p>
+		<p id="zh" style="display:none;">这是刘焕举的网站，由HTML和CSS创建。</p>
+		<img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg" alt="My Image">
+	</section>
+	<section id="about">
+			<h2>About</h2>
+			<p id="en">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae aliquet ex. Sed vehicula, sem vel pharetra aliquam, felis orci bibendum lorem, ac blandit nulla mi ut lorem. Nulla pulvinar, arcu et fermentum molestie, velit velit feugiat mi, sed tristique elit elit non mauris.</p>
+			<p id="zh" style="display:none;">嗨，我是刘焕举。我是一名网页设计师和开发人员。我喜欢创造漂亮的和易于使用的网站，并且我致力于不断改进我的技能和知识。</p>
 		</section>
-		<section id="about" style="display:none;">
-			<h2>About Me</h2>
-			<p id="en">I am a web developer based in New York City.</p>
-			<p id="zh" style="display:none;">我是一名ZJU的网页开发人员。</p>
-		</section>
-		<section id="services" style="display:none;">
-			<h2>My Services</h2>
+
+		<section id="services">
+			<h2>Services</h2>
 			<ul id="en">
 				<li>Web Design</li>
 				<li>Web Development</li>
@@ -68,34 +107,15 @@
 				<li>搜索引擎优化</li>
 			</ul>
 		</section>
-		<section id="contact" style="display:none;">
-			<h2>Contact Me</h2>
-			<form>
-				<label for="name">Name:</label>
-				<input type="text" id="name" name="name"><br><br>
-				<label for="email">Email:</label>
-				<input type="email" id="email" name="email"><br><br>
-				<label for="message">Message:</label>
-				<textarea id="message" name="message"></textarea><br><br>
-				<input type="submit" value="Submit">
-			</form>
-		</section>
-	</main>
-	<footer>
-		<p>Copyright © 2023</p>
-	</footer>
-	<script>
-		function switchLanguage() {
-			var en_elements = document.querySelectorAll('#en');
-			var zh_elements = document.querySelectorAll('#zh');
 
-			for (var i = 0; i < en_elements.length; i++) {
-				en_elements[i].style.display = 'none';
-			}
-			for (var i = 0; i < zh_elements.length; i++) {
-				zh_elements[i].style.display = 'block';
-			}
-		}
-	</script>
+		<section id="contact">
+			<h2>Contact</h2>
+			<p>Please feel free to contact me for any inquiries:</p>
+			<ul>
+				<li>Email: huanju.liu@example.com</li>
+				<li>Phone: 123-456-7890</li>
+				<li>Address: 123 Main St, Anytown, USA</li>
+			</ul>
+		</section>
 </body>
 </html>
