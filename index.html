@@ -1,143 +1,146 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>My Website</title>
-	<style>
-		body {
-			font-family: Arial, sans-serif;
-			margin: 0;
-			padding: 0;
-		}
-		nav {
-			background-color: #333;
-			color: #fff;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			padding: 1rem;
-		}
-		nav ul {
-			list-style: none;
-			display: flex;
-			margin: 0;
-			padding: 0;
-		}
-		nav ul li {
-			margin-left: 1rem;
-		}
-		nav ul li:first-child {
-			margin-left: 0;
-		}
-		nav ul li a {
-			color: #fff;
-			text-decoration: none;
-			transition: all 0.3s ease-in-out;
-		}
-		nav ul li a:hover {
-			color: #ff6600;
-		}
-		h1 {
-			font-size: 3rem;
-			margin: 2rem;
-			text-align: center;
-		}
-		section {
-			margin: 2rem;
-		}
-		#en {
-			text-align: justify;
-		}
-		#zh {
-			text-align: justify;
-			display: none;
-		}
-		.button {
-			display: inline-block;
-			background-color: #333;
-			color: #fff;
-			padding: 1rem 2rem;
-			margin: 1rem;
-			border-radius: 4px;
-			text-align: center;
-			text-decoration: none;
-			transition: all 0.3s ease-in-out;
-		}
-		.button:hover {
-			background-color: #ff6600;
-		}
-	</style>
-</head>
-<body>
-	<nav>
-		<h1>My Website</h1>
-		<ul>
-			<li><a href="#home">Home</a></li>
-			<li><a href="#about">About</a></li>
-			<li><a href="#services">Services</a></li>
-			<li><a href="#contact">Contact</a></li>
-			<li><a href="#" class="button" id="button1">Function 1</a></li>
-			<li><a href="#" class="button" id="button2">Function 2</a></li>
-			<li><a href="#" class="button" id="button3">Function 3</a></li>
-			<li><a href="#" class="button" id="button4">Function 4</a></li>
-		</ul>
-	</nav>
-	<section id="home">
-		<h2>Welcome to my website!</h2>
-		<p>Here you will find everything you need to know about me and my services.</p>
-	</section>
-	<section id="about">
-  <h2>About</h2>
-  <p id="en">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae aliquet ex. Sed vehicula, sem vel pharetra aliquam, felis orci bibendum lorem, ac blandit nulla mi ut lorem. Nulla pulvinar, arcu et fermentum molestie, velit velit feugiat mi, sed tristique elit elit non mauris.</p>
-  <p id="zh" style="display:none">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae aliquet ex. Sed vehicula, sem vel pharetra aliquam, felis orci bibendum lorem, ac blandit nulla mi ut lorem. Nulla pulvinar, arcu et fermentum molestie, velit velit feugiat mi, sed tristique elit elit non mauris.</p>
-  <button onclick="toggleLanguage()">中文</button>
-</section>
-
-<section id="services">
-  <h2>Services</h2>
-  <ul>
-    <li>Service 1</li>
-    <li>Service 2</li>
-    <li>Service 3</li>
-    <li>Service 4</li>
-  </ul>
-</section>
-
-<section id="contact">
-  <h2>Contact Us</h2>
-  <form>
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name"><br><br>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email"><br><br>
-    <label for="message">Message:</label><br>
-    <textarea id="message" name="message"></textarea><br><br>
-    <input type="submit" value="Submit">
-  </form>
-</section>
-
-<footer>
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</footer>
-
-<script>
-  function toggleLanguage() {
-    var en = document.getElementById("en");
-    var zh = document.getElementById("zh");
-    if (en.style.display === "none") {
-      en.style.display = "block";
-      zh.style.display = "none";
-    } else {
-      en.style.display = "none";
-      zh.style.display = "block";
-    }
-  }
-</script>
+	<head>
+		<title>LHJ</title>
+		<meta charset="UTF-8">
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+			}
+			nav {
+				background-color: #333;
+				color: white;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 10px;
+			}
+			nav ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				display: flex;
+			}
+			nav li {
+				margin-left: 20px;
+			}
+			nav li:first-child {
+				margin-left: 0;
+			}
+			nav a {
+				color: white;
+				text-decoration: none;
+			}
+			nav a:hover {
+				text-decoration: underline;
+			}
+			#home {
+				background-image: url('https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg');
+				background-size: cover;
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				color: white;
+				text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+			}
+			#home h1 {
+				font-size: 5em;
+				margin-bottom: 0;
+			}
+			#home p {
+				font-size: 2em;
+				margin-top: 0;
+			}
+			section {
+				padding: 50px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
+			}
+			h2 {
+				font-size: 3em;
+				margin-bottom: 20px;
+			}
+			#en {
+				display: block;
+			}
+			#zh {
+				display: none;
+			}
+			button {
+				background-color: #333;
+				color: white;
+				border: none;
+				border-radius: 5px;
+				padding: 10px 20px;
+				cursor: pointer;
+			}
+			button:hover {
+				background-color: white;
+				color: #333;
+			}
+			@media only screen and (max-width: 600px) {
+				nav ul {
+					flex-direction: column;
+				}
+				nav li {
+					margin: 10px 0;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<ul>
+				<li><a href="#home">Home</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#services">Services</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+			<div>
+				<button onclick="showEn()">English</button>
+				<button onclick="showZh()">中文</button>
+			</div>
+		</nav>
+		<section id="home">
+			<h1>Welcome to My Website</h1>
+			<p>We offer the best services for your needs.</p>
+		</section>
+		<section id="about">
+			<h2>About</h2>
+			<p id="en">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae aliquet ex. Sed vehicula, sem vel pharetra aliquam, felis orci bibendum lorem, ac blandit nulla mi ut lorem. Nulla pulvinar, arcu et fermentum molestie, velit velit feugiat mi, sed tristique elit elit non mauris.</p>
+			<p id="zh" style="display:none">关于我们</p>
+			<button onclick="toggleLanguage()">中文</button>
+		</section>
+		
+		<section id="services">
+			<h2>Our Services</h2>
+			<ul>
+				<li>Service 1</li>
+				<li>Service 2</li>
+				<li>Service 3</li>
+			</ul>
+		</section>
+		
+		<section id="contact">
+			<h2>Contact Us</h2>
+			<form>
+				<label for="name">Name:</label><br>
+				<input type="text" id="name" name="name"><br>
+				<label for="email">Email:</label><br>
+				<input type="email" id="email" name="email"><br>
+				<label for="message">Message:</label><br>
+				<textarea id="message" name="message"></textarea><br>
+				<input type="submit" value="Submit">
+			</form> 
+		</section>
+		
+	</main>
+	<footer>
+		<p>&copy; 2023 Company Name. All rights reserved.</p>
+	</footer>
 </body>
 </html>
