@@ -34,17 +34,6 @@
 			nav a:hover {
 				text-decoration: underline;
 			}
-			#home {
-				background-image: url('https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg');
-				background-size: cover;
-				height: 100vh;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				flex-direction: column;
-				color: white;
-				text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-			}
 			#home h1 {
 				font-size: 5em;
 				margin-bottom: 0;
@@ -95,91 +84,90 @@
 	<body>
 		<nav>
 		  <ul id="nav-links">
-		    <li><a href="#home" id="home-en">Home</a><a href="#home" id="home-zh" style="display:none">主页</a></li>
-		    <li><a href="#about" id="about-en">About</a><a href="#about" id="about-zh" style="display:none">关于</a></li>
 		    <li><a href="#services" id="services-en">Services</a><a href="#services" id="services-zh" style="display:none">服务</a></li>
 		    <li><a href="#contact" id="contact-en">Contact</a><a href="#contact" id="contact-zh" style="display:none">联系</a></li>
 		  </ul>
-		  <div>
-		    <select id="language-select" onchange="changeLanguage()">
-		      <option value="en">English</option>
-		      <option value="zh">中文</option>
-		    </select>
-		  </div>
 		</nav>
-		<section id="home">
-		  <h1 id="title-en">Welcome to My Website</h1>
-		  <h1 id="title-zh" style="display:none">欢迎来到我的网站</h1>
-		  <p id="services-text-en">What I can serve for you?</p>
-		  <p id="services-text-zh" style="display:none">该网站可以为你们提供什么? </p>
-		</section>
-		<section id="about">
-		  <h2 id="about-header-en">About Us</h2>
-		  <h2 id="about-header-zh" style="display:none">关于我们</h2>
-		  <p id="about-text-en">I'm Huanju Liu from Zhejiang University.</p>
-		  <p id="about-text-zh" style="display:none">这是刘焕举的个人网站</p>
-		</section>
-		<script>
-		  function changeLanguage() {
-		    var language = document.getElementById("language-select").value;
-		    if (language === "en") {
-		      document.getElementById("title-en").style.display = "block";
-		      document.getElementById("title-zh").style.display = "none";
-		      document.getElementById("services-text-en").style.display = "block";
-		      document.getElementById("services-text-zh").style.display = "none";
-		      document.querySelectorAll("[id$='-en']").forEach(function(el) {
-		        el.style.display = "block";
-		      });
-		      document.querySelectorAll("[id$='-zh']").forEach(function(el) {
-		        el.style.display = "none";
-		      });
-		    } else if (language === "zh") {
-		      document.getElementById("title-en").style.display = "none";
-		      document.getElementById("title-zh").style.display = "block";
-		      document.getElementById("services-text-en").style.display = "none";
-		      document.getElementById("services-text-zh").style.display = "block";
-		      document.querySelectorAll("[id$='-zh']").forEach(function(el) {
-		        el.style.display = "block";
-		      });
-		      document.querySelectorAll("[id$='-en']").forEach(function(el) {
-		        el.style.display = "none";
-		      });
-		    }
-		  }
-		</script>
+
+        <section id="contact">
+            <h2 id="contact-header-en">Useful URL</h2>
+            <h2 id="contact-header-zh" style="display:none">常用网址</h2>
+            <ul>
+              <li><a href="https://www.baidu.com/">baidu</a>
+              <a href="https://www.google.com/">google</a>
+              <a href="https://fsoufsou.com/">gogl</a>
+              <a href="https://weixin.sogou.com/">sogou</a>
+              <a href="https://cn.bing.com/?ensearch=1&FORM=BEHPTB">bing</a></li>
+              <li><a href="https://pubmed.ncbi.nlm.nih.gov/advanced/">pubmed</a>
+				<a href="https://scholar.google.com/">google scholar</a>
+				<a href="https://www.medreading.cn/pubmed_zh?t=1681311697657" target="_blank">Medreading</a>
+				<a href="https://europepmc.org/advancesearch">EuPMC</a>
+				<a href="https://eds.p.ebscohost.com/eds/search/advanced?vid=2&sid=778ba7d7-7bd6-4f3e-8519-7e8e9d98dd76%40redis">求是学术</a></li>
+			  <li><a href="https://jobrxiv.org/">Science Jobs</a>
+				<a href="https://jobs.sciencecareers.org/">sciencecareers</a>
+				<a href="https://academicpositions.com/find-jobs">academicpositions</a>
+				<a href="https://facultyvacancies.com/?positionTypeId%5B%5D=109&q=">facultyvacancies</a>
+				<a href="https://www.findapostdoc.com/">PostDoc & PhD</a>
+				<a href="https://www.nature.com/naturecareers/">naturecareers</a>
+			 </li>
+			 <li><a href="https://hr.zju.edu.cn/postdoctor/zpxx/list.htm">浙大博后</a>
+				<a href="https://postdocs.bjmu.edu.cn/">北大博后</a>
+			 </li>
+              <li><a href="http://flybase.org/">flybase</a>
+              <a href="https://www.sci-hub.ren/">Sci-hub</a>
+              <a href="https://jcr.clarivate.com/jcr/home">JCR</a></li>
+              <li><a href="https://translate.google.com/" target="_blank">google translate</a>
+				<a href="https://www.deepl.com/translator">deepl</a>
+              <a href="https://fanyi.baidu.com/?aldtype=16047#auto/zh" target="_blank">百度翻译</a></li>
+              <li><a href="https://shimo.im/desktop" target="_blank">石墨文档</a>
+                <a href="https://mubu.com/app">幕布</a>
+            	<a href="https://weread.qq.com/web/shelf">微读</a></li>
+              <li><a href="https://www.zju.edu.cn/xs/list.htm">浙大讲座</a>
+				<a href="https://classroom.zju.edu.cn/">学在浙大</a>
+				<a href="https://www.cc98.org/board/581">学术98</a></li>
+              <li><a href="http://www.cfzsm.zju.edu.cn/lfsms/user/login">浙大平台</a>
+                <a href="http://www.cfzsm.zju.edu.cn/lfsms/user/login">公共平台</a>
+            	<a href="http://ms.zju.edu.cn/">浙大软件</a></li>
+			  <li> <a href="https://www.zju.edu.cn/">浙大</a>
+				<a href="http://www.grs.zju.edu.cn/">研究生院</a>
+				<a href="http://www.cmm.zju.edu.cn/">医学院</a>
+				<a href="http://bms.zju.edu.cn/">基础医学院</a>
+				<a href="http://www.ig.zju.edu.cn/">遗传所</a>
+				<a href="http://www.sdbzju.cn/">实验室</a></li>
+				<li><a href="https://www.wanfangdata.com.cn/">万方</a>
+				<a href="https://www.cnki.net/">知网</a>
+				<a href="https://kns.cnki.net/kns8?dbcode=CDMD">知网学位论文</a></li>
+				<li><a href="https://www.rcsb.org/">PDB</a>
+				<a href="https://www.uniprot.org/uniprotkb/Q9NAZ4/entry">uniprot</a>
+				<a href="https://pubchem.ncbi.nlm.nih.gov/">pubchem</a></li>
+				
+              <li><a href="https://www.home-for-researchers.com/static/index.html#/">科研者之家</a>
+				<a href="https://www.news-medical.net/medical">medical_news</a>
+            <a href="https://mail.google.com/mail/u/0/#inbox">Gmail</a></li>
+			<li><a href="https://search.bilibili.com/all?vt=79527293">bibi</a>
+			<a href="http://www.iqiyi.com/">爱奇艺</a>
+			<a href="https://v.qq.com/">腾讯</a>
+			<a href="http://www.youku.com/">优酷</a>
+			<a href="https://www.youtube.com/">YouTu</a>
+			<a href="https://zh.savefrom.net/226/">YouT_down</a></li>
+          </ul>
+        </section>
+          
 		<section id="services">
-			<h2 id="services-header-en">Our Services</h2>
+			<h2 id="services-header-en">me_relex</h2>
 			<h2 id="services-header-zh" style="display:none">服务范围</h2>
 			<ul>
-				<li><a href="https://scholar.google.com/citations?user=OtZMZmYAAAAJ&hl=en">Google scholar</a></li>
+				<li><a href="https://scholar.google.com/citations?user=OtZMZmYAAAAJ&hl=en">Google scholar</a>
 				<a href="https://www.researchgate.net/profile/Huanju-Liu/research">researchgate</a>
 				<a href="https://orcid.org/my-orcid?orcid=0000-0002-3370-4296">orcid</a></li>
 				<li><a href="https://space.bilibili.com/386729652?spm_id_from=333.337.0.0" target="_blank">B站主页</a>
 				<a href="https://www.ixigua.com/home/67836768907" target="_blank">西瓜视频</a></li>
 				<li><a href="https://www.jianshu.com/u/8e6071dd7b81" target="_blank">简书</a>
 				<a href="https://github.com/huanjuliu/" target="_blank">Github</a></li>
+				<li><a href="https://www.speedtypingonline.com/typing-test">typing_test</a></li>
 			</ul>
 		</section>
 
-		<section id="contact">
-		  <h2 id="contact-header-en">Useful URL</h2>
-		  <h2 id="contact-header-zh" style="display:none">常用网址</h2>
-		  <ul>
-			<li><a href="https://pubmed.ncbi.nlm.nih.gov/advanced/">pubmed</a></li>
-			<li><a href="http://flybase.org/">flybase</a></li>
-			<li><a href="https://translate.google.com/" target="_blank">google translate</a>
-			<a href="https://fanyi.baidu.com/?aldtype=16047#auto/zh" target="_blank">百度翻译</a></li>
-			<li><a href="https://www.medreading.cn/pubmed_zh?t=1681311697657" target="_blank">Medreading</a>
-			<a href="https://shimo.im/desktop" target="_blank">石墨文档</a></li>
-		</ul>
-		</section>
-		
 	</main>
-	<footer>
-		<p>&copy; 2023 健康科技探索有限公司. All rights reserved.
-		<a href="http://www.sdbzju.cn/article_39405.html">Lab news</a> 
-		<a href="https://zupo.zju.edu.cn/xw/list.htm">ZJU_News</a>
-		<a href="https://www.zju.edu.cn/xs/list.htm">ZJU_seminar</a></p>
-	</footer>
 </body>
 </html>
