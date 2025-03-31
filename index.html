@@ -1,173 +1,257 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>LHJ's web</title>
-		<meta charset="UTF-8">
-		<style>
-			body {
-				font-family: Arial, sans-serif;
-			}
-			nav {
-				background-color: #333;
-				color: white;
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				padding: 10px;
-			}
-			nav ul {
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-				display: flex;
-			}
-			nav li {
-				margin-left: 20px;
-			}
-			nav li:first-child {
-				margin-left: 0;
-			}
-			nav a {
-				color: white;
-				text-decoration: none;
-			}
-			nav a:hover {
-				text-decoration: underline;
-			}
-			#home h1 {
-				font-size: 5em;
-				margin-bottom: 0;
-			}
-			#home p {
-				font-size: 2em;
-				margin-top: 0;
-			}
-			section {
-				padding: 50px;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				text-align: center;
-			}
-			h2 {
-				font-size: 3em;
-				margin-bottom: 20px;
-			}
-			#en {
-				display: block;
-			}
-			#zh {
-				display: none;
-			}
-			button {
-				background-color: #333;
-				color: white;
-				border: none;
-				border-radius: 5px;
-				padding: 10px 20px;
-				cursor: pointer;
-			}
-			button:hover {
-				background-color: white;
-				color: #333;
-			}
-			@media only screen and (max-width: 600px) {
-				nav ul {
-					flex-direction: column;
-				}
-				nav li {
-					margin: 10px 0;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<nav>
-		  <ul id="nav-links">
-		    <li><a href="#services" id="services-en">Services</a><a href="#services" id="services-zh" style="display:none">服务</a></li>
-		    <li><a href="#contact" id="contact-en">Contact</a><a href="#contact" id="contact-zh" style="display:none">联系</a></li>
-		  </ul>
-		</nav>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LHJ 学术导航系统</title>
+    <style>
+        :root {
+            --primary: #2B3856;     /* 深海蓝主色 */
+            --secondary: #4B6A88;    /* 科技蓝辅助色 */
+            --accent: #F5A623;       /* 活力橙强调色 */
+            --light: #F8F9FA;        /* 浅灰背景 */
+            --radius: 12px;          /* 统一圆角 */
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
 
-        <section id="contact">
-            <h2 id="contact-header-en">Useful URL</h2>
-            <h2 id="contact-header-zh" style="display:none">常用网址</h2>
-            <ul>
-              <li><a href="https://www.baidu.com/">baidu</a>
-              <a href="https://www.google.com/">google</a>
-              <a href="https://fsoufsou.com/">gogl</a>
-              <a href="https://weixin.sogou.com/">sogou</a>
-              <a href="https://cn.bing.com/?ensearch=1&FORM=BEHPTB">bing</a></li>
-              <li><a href="https://pubmed.ncbi.nlm.nih.gov/advanced/">pubmed</a>
-				<a href="https://scholar.google.com/">google scholar</a>
-				<a href="https://www.medreading.cn/pubmed_zh?t=1681311697657" target="_blank">Medreading</a>
-				<a href="https://europepmc.org/advancesearch">EuPMC</a>
-				<a href="https://eds.p.ebscohost.com/eds/search/advanced?vid=2&sid=778ba7d7-7bd6-4f3e-8519-7e8e9d98dd76%40redis">求是学术</a></li>
-			  <li><a href="https://jobrxiv.org/">Science Jobs</a>
-				<a href="https://jobs.sciencecareers.org/">sciencecareers</a>
-				<a href="https://academicpositions.com/find-jobs">academicpositions</a>
-				<a href="https://facultyvacancies.com/?positionTypeId%5B%5D=109&q=">facultyvacancies</a>
-				<a href="https://www.findapostdoc.com/">PostDoc & PhD</a>
-				<a href="https://www.nature.com/naturecareers/">naturecareers</a>
-			 </li>
-			 <li><a href="https://hr.zju.edu.cn/postdoctor/zpxx/list.htm">浙大博后</a>
-				<a href="https://postdocs.bjmu.edu.cn/">北大博后</a>
-			 </li>
-              <li><a href="http://flybase.org/">flybase</a>
-              <a href="https://www.sci-hub.ren/">Sci-hub</a>
-              <a href="https://jcr.clarivate.com/jcr/home">JCR</a></li>
-              <li><a href="https://translate.google.com/" target="_blank">google translate</a>
-				<a href="https://www.deepl.com/translator">deepl</a>
-              <a href="https://fanyi.baidu.com/?aldtype=16047#auto/zh" target="_blank">百度翻译</a></li>
-              <li><a href="https://shimo.im/desktop" target="_blank">石墨文档</a>
-                <a href="https://mubu.com/app">幕布</a>
-            	<a href="https://weread.qq.com/web/shelf">微读</a></li>
-              <li><a href="https://www.zju.edu.cn/xs/list.htm">浙大讲座</a>
-				<a href="https://classroom.zju.edu.cn/">学在浙大</a>
-				<a href="https://www.cc98.org/board/581">学术98</a></li>
-              <li><a href="http://www.cfzsm.zju.edu.cn/lfsms/user/login">浙大平台</a>
-                <a href="http://www.cfzsm.zju.edu.cn/lfsms/user/login">公共平台</a>
-            	<a href="http://ms.zju.edu.cn/">浙大软件</a></li>
-			  <li> <a href="https://www.zju.edu.cn/">浙大</a>
-				<a href="http://www.grs.zju.edu.cn/">研究生院</a>
-				<a href="http://www.cmm.zju.edu.cn/">医学院</a>
-				<a href="http://bms.zju.edu.cn/">基础医学院</a>
-				<a href="http://www.ig.zju.edu.cn/">遗传所</a>
-				<a href="http://www.sdbzju.cn/">实验室</a></li>
-				<li><a href="https://www.wanfangdata.com.cn/">万方</a>
-				<a href="https://www.cnki.net/">知网</a>
-				<a href="https://kns.cnki.net/kns8?dbcode=CDMD">知网学位论文</a></li>
-				<li><a href="https://www.rcsb.org/">PDB</a>
-				<a href="https://www.uniprot.org/uniprotkb/Q9NAZ4/entry">uniprot</a>
-				<a href="https://pubchem.ncbi.nlm.nih.gov/">pubchem</a></li>
-				
-              <li><a href="https://www.home-for-researchers.com/static/index.html#/">科研者之家</a>
-				<a href="https://www.news-medical.net/medical">medical_news</a>
-            <a href="https://mail.google.com/mail/u/0/#inbox">Gmail</a></li>
-			<li><a href="https://search.bilibili.com/all?vt=79527293">bibi</a>
-			<a href="http://www.iqiyi.com/">爱奇艺</a>
-			<a href="https://v.qq.com/">腾讯</a>
-			<a href="http://www.youku.com/">优酷</a>
-			<a href="https://www.youtube.com/">YouTu</a>
-			<a href="https://zh.savefrom.net/226/">YouT_down</a></li>
-          </ul>
-        </section>
-          
-		<section id="services">
-			<h2 id="services-header-en">me_relex</h2>
-			<h2 id="services-header-zh" style="display:none">服务范围</h2>
-			<ul>
-				<li><a href="https://scholar.google.com/citations?user=OtZMZmYAAAAJ&hl=en">Google scholar</a>
-				<a href="https://www.researchgate.net/profile/Huanju-Liu/research">researchgate</a>
-				<a href="https://orcid.org/my-orcid?orcid=0000-0002-3370-4296">orcid</a></li>
-				<li><a href="https://space.bilibili.com/386729652?spm_id_from=333.337.0.0" target="_blank">B站主页</a>
-				<a href="https://www.ixigua.com/home/67836768907" target="_blank">西瓜视频</a></li>
-				<li><a href="https://www.jianshu.com/u/8e6071dd7b81" target="_blank">简书</a>
-				<a href="https://github.com/huanjuliu/" target="_blank">Github</a></li>
-				<li><a href="https://www.speedtypingonline.com/typing-test">typing_test</a></li>
-			</ul>
-		</section>
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            background: var(--light);
+            margin: 0;
+        }
 
-	</main>
+        /* 导航栏设计 */
+        .navbar {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 1rem 3rem;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            padding: 0.8rem 1.2rem;
+            border-radius: var(--radius);
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
+        }
+
+        /* 主内容区 */
+        .main-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            padding: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* 分类卡片 */
+        .category-card {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 1.8rem;
+            transition: transform 0.3s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--primary);
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .category-header::before {
+            content: "▶";
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        /* 链接组 */
+        .link-group {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: var(--light);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--primary);
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .link-item:hover {
+            background: var(--secondary);
+            color: white;
+            box-shadow: 0 3px 12px rgba(75,106,136,0.3);
+            padding-right: 2.5rem;
+        }
+
+        .link-item::after {
+            content: "→";
+            position: absolute;
+            right: 1rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .link-item:hover::after {
+            opacity: 1;
+        }
+
+        /* 响应式优化 */
+        @media (max-width: 1200px) {
+            .main-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .main-grid {
+                grid-template-columns: 1fr;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">LHJ Academic Hub</div>
+            <ul class="nav-links">
+                <li><a href="#search">核心工具</a></li>
+                <li><a href="#resources">资源平台</a></li>
+                <li><a href="#personal">个人主页</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-grid">
+        <!-- 学术搜索模块 -->
+        <div class="category-card">
+            <div class="category-header">
+                <h2>学术搜索</h2>
+            </div>
+            <div class="link-group">
+                <a href="https://pubmed.ncbi.nlm.nih.gov/" class="link-item">PubMed</a>
+                <a href="https://scholar.google.com/" class="link-item">Google Scholar</a>
+                <a href="https://www.sci-hub.ren/" class="link-item">Sci-Hub</a>
+                <a href="https://europepmc.org/" class="link-item">Europe PMC</a>
+                <a href="https://www.cnki.net/" class="link-item">中国知网</a>
+                <a href="https://www.wanfangdata.com.cn/" class="link-item">万方数据</a>
+            </div>
+        </div>
+
+        <!-- 科研工具模块 -->
+        <div class="category-card">
+            <div class="category-header">
+                <h2>科研工具</h2>
+            </div>
+            <div class="link-group">
+                <a href="https://www.rcsb.org/" class="link-item">PDB蛋白质数据库</a>
+                <a href="https://www.uniprot.org/" class="link-item">UniProt数据库</a>
+                <a href="https://pubchem.ncbi.nlm.nih.gov/" class="link-item">PubChem化合物库</a>
+                <a href="https://jcr.clarivate.com/" class="link-item">JCR期刊查询</a>
+                <a href="https://www.home-for-researchers.com/" class="link-item">科研者之家</a>
+                <a href="https://www.medreading.cn/" class="link-item">医学文献平台</a>
+            </div>
+        </div>
+
+        <!-- 院校平台模块 -->
+        <div class="category-card">
+            <div class="category-header">
+                <h2>院校平台</h2>
+            </div>
+            <div class="link-group">
+                <a href="https://www.zju.edu.cn/" class="link-item">浙江大学官网</a>
+                <a href="http://www.grs.zju.edu.cn/" class="link-item">研究生院系统</a>
+                <a href="http://ms.zju.edu.cn/" class="link-item">软件服务平台</a>
+                <a href="http://www.cc98.org/" class="link-item">CC98论坛</a>
+                <a href="http://www.cmm.zju.edu.cn/" class="link-item">基础医学院</a>
+                <a href="http://www.ig.zju.edu.cn/" class="link-item">遗传研究所</a>
+            </div>
+        </div>
+
+        <!-- 文献管理模块 -->
+        <div class="category-card">
+            <div class="category-header">
+                <h2>文献管理</h2>
+            </div>
+            <div class="link-group">
+                <a href="https://www.speedtypingonline.com/" class="link-item">打字速度测试</a>
+                <a href="https://shimo.im/desktop" class="link-item">石墨文档协作</a>
+                <a href="https://weread.qq.com/" class="link-item">微信读书专业版</a>
+                <a href="https://www.zotero.org/" class="link-item">Zotero管理工具</a>
+                <a href="https://www.endnote.com/" class="link-item">EndNote文献管理</a>
+                <a href="https://www.mendeley.com/" class="link-item">Mendeley阅读器</a>
+            </div>
+        </div>
+
+        <!-- 媒体平台模块 -->
+        <div class="category-card">
+            <div class="category-header">
+                <h2>媒体平台</h2>
+            </div>
+            <div class="link-group">
+                <a href="https://space.bilibili.com/386729652" class="link-item">B站学术频道</a>
+                <a href="https://www.ixigua.com/" class="link-item">西瓜视频专栏</a>
+                <a href="https://github.com/huanjuliu/" class="link-item">GitHub仓库</a>
+                <a href="https://scholar.google.com/citations" class="link-item">学术主页</a>
+                <a href="https://www.researchgate.net/" class="link-item">ResearchGate</a>
+                <a href="https://orcid.org/" class="link-item">ORCID学者ID</a>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
